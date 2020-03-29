@@ -18,10 +18,11 @@ export class HomeComponent implements OnInit {
   todayscount: any;
   StateData: any;
   date: any;
-  confirmed: any;
-  deaths: any;
-  recovered: any;
-  active: any;
+  confirmed = 0;
+  deaths = 0;
+  recovered = 0;
+  active = 0;
+  totalForeignCases = 0;
   constructor(
     @Inject(DataService) private dataService: DataService,
 
@@ -38,16 +39,27 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.dataService.getStateWiseData().subscribe((res: any) => {
-    //   this.date =res.lastUpdated;
-    //   res.data.map(element => {
+    this.dataService.getStateWiseData().subscribe((res: any) => {
+      this.date = res.lastUpdated;
+      for (const key in res.data) {
+        if (res.data.hasOwnProperty(key)) {
+          // const element = res.data[key];
+          this.confirmed += res.data[key].totalIndianCases;
+          this.totalForeignCases += res.data[key].totalForeignCases;
+          this.recovered += res.data[key].totalRecovered;
+          this.deaths += res.data[key].totalDeaths;
+        }
+      }
+      console.log(this.confirmed + '  ' +
+        this.active + '  ' +
+        this.recovered + '  ' +
+        this.deaths + '  ');
+      this.active = this.confirmed - (this.recovered + this.deaths);
 
-    //   });
-    //   for (let i = 0; i < res.data.length; i++) {
-    //     const element = res.data[i];
+    });
 
-    //   }
-    // });
+
+
   }
 
 }

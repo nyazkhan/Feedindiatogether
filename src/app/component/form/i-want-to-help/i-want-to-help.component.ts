@@ -139,7 +139,7 @@ export class IWantToHelpComponent implements OnInit {
 
       // tslint:disable-next-line: align
     }
-    // this.SaveUserDeatils();
+    this.SaveUserDeatils();
     // if (this.userDetails.description == '') {
 
     //   // tslint:disable-next-line: align

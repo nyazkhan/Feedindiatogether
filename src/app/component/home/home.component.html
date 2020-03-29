@@ -29,14 +29,14 @@
             </div>
             <div class="col-md-7">
                 <ul class="cases-list">
-                    <li style="color: #EB3535">{{corornaVirusPatient.confirmed}}<br><span>Confirmed</span></li>
-                    <li style="color: #156ADE">{{corornaVirusPatient.active }}<br><span>Active</span>
+                    <li style="color: #EB3535">{{confirmed}}<br><span>Confirmed</span></li>
+                    <li style="color: #156ADE">{{active }}<br><span>Active</span>
                     </li>
-                    <li style="color: #109A2A">{{corornaVirusPatient.recovered}}<br><span>Recovered</span></li>
-                    <li style="color: #7C7C7C">{{corornaVirusPatient.deaths}}<br><span>Deceased</span></li>
+                    <li style="color: #109A2A">{{recovered}}<br><span>Recovered</span></li>
+                    <li style="color: #7C7C7C">{{deaths}}<br><span>Deceased</span></li>
                     <li class="mobile-hide" style="color: #000;border-right: none" class="lst-font">Corona Cases
                         India<br><span style="color: #000000; opacity: .4;">Updated
-                            {{corornaVirusPatient.date | date:'EEE,  d MMM ,  y'}}</span><br><span
+                            {{date | date:'EEE,  d MMM ,  y h:mm a'}}</span><br><span
                             class="view-detail">View Detail</span></li>
                 </ul>
             </div>
@@ -51,14 +51,14 @@
         <div class="col-md-7">
           <ul class="co-detail">
             <li style="color: #000" class="lst-font">Corona Cases India<br><span
-                style="color: #000000; opacity: .4;">Updated  {{corornaVirusPatient.date | date:'EEE,  d MMM ,  y'}}</span> <span
+                style="color: #000000; opacity: .4;">Updated  {{date | date:'EEE,  d MMM ,  y h:mm a'}}</span> <span
                 class="view-detail">View Detail</span></li>
           </ul>
           <ul class="cases-list">
-            <li style="color: #EB3535">{{corornaVirusPatient.confirmed}}<br><span>Confirmed</span></li>
-            <li style="color: #156ADE">{{corornaVirusPatient.active }}<br><span>Active</span></li>
-            <li style="color: #109A2A">{{corornaVirusPatient.recovered}}<br><span>Recovered</span></li>
-            <li style="color: #7C7C7C;border-right: none;">{{corornaVirusPatient.deaths}}<br><span>20</span></li>
+            <li style="color: #EB3535">{{confirmed}}<br><span>Confirmed</span></li>
+            <li style="color: #156ADE">{{active }}<br><span>Active</span></li>
+            <li style="color: #109A2A">{{recovered}}<br><span>Recovered</span></li>
+            <li style="color: #7C7C7C;border-right: none;">{{deaths}}<br><span>20</span></li>
           </ul>
           <hr>
         </div>

@@ -23,7 +23,7 @@
                 <div class="col-md-12 bg-form">
                     <h5 class="field-title">Set Location</h5>
                     <div class="form-row">
-                        <div class="form-group col-md-2">
+                        <div class="form-group col-md-3">
                             <label for="inputPincode">
                                 Pin code
                                 <span style="color: red;">*</span>
@@ -35,7 +35,7 @@
                                 Find</button>
                             <input type="text" (keyup)="checkPincode($event)" pattern="^[0-9]{6,6}$" #pincode="ngModel"
                                 required class="form-control" name="pincode" id="pincode"
-                                [(ngModel)]="userDetails.pincode" placeholder="Enter Pincode">
+                                [(ngModel)]="userDetails.pincode" placeholder="Enter Pincode then click FIND button">
 
                         </div>
 
