@@ -1,5 +1,8 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { DataService } from 'src/app/service/data.service';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
+import { AlertService } from 'src/app/service/alert.service';
 export class Hero {
 
   constructor(
@@ -35,6 +38,7 @@ export class NeedHelpComponent implements OnInit {
       shelter: false,
       other: false
     },
+    noOfPersons: '',
     description: '',
     state: '',
     district: '',
@@ -43,20 +47,19 @@ export class NeedHelpComponent implements OnInit {
     pincode: '',
 
   };
+
+
+
   blockArray: any = [];
   slectedBlock: any;
   blockSettings: any;
   constructor(
     @Inject(DataService) private dataService: DataService,
+    @Inject(AngularFirestore) private firestore: AngularFirestore,
+    @Inject(Router) private router: Router,
+    @Inject(AlertService) private alertService: AlertService,
+  ) { }
 
-  ) {
-    this.dataService.getDataFromGithub().subscribe((res) => {
-      console.log(res.India[res.India.length - 1]);
-
-
-    });
-
-  }
   ngOnInit() {
 
     this.blockSettings = {
@@ -68,6 +71,22 @@ export class NeedHelpComponent implements OnInit {
       allowSearchFilter: true
     };
   }
+
+  SaveUserDeatils() {
+    console.log(this.userDetails);
+
+    this.firestore.collection('NeedHelp').add(this.userDetails).then((docRef) => {
+      this.router.navigate(['/home']);
+
+
+    }).catch((error) => {
+      this.alertService.showErrorMesg('Error adding document: ');
+
+    });
+  }
+
+
+
   findPlace() {
     this.dataService.getDataByPincode(this.userDetails.pincode).subscribe((res) => {
       if (res[0].Status === 'Success') {
@@ -78,6 +97,7 @@ export class NeedHelpComponent implements OnInit {
           return ele.Name;
         });
       } else {
+        this.alertService.showErrorMesg(res[0].Message);
         this.userDetails.state = '';
         this.userDetails.district = '';
         this.blockArray = [];
@@ -88,8 +108,69 @@ export class NeedHelpComponent implements OnInit {
 
     });
   }
-  onBlockSelect(item) {
-    console.log(item, this.slectedBlock);
+
+  checkPincode(event) {
+    const val = event.target.value;
+    console.log(val.length > 6);
+
+    if (val.length > 6) {
+      this.userDetails.pincode = val.substring(0, 6);
+    }
+    console.log(this.userDetails.pincode);
 
   }
+  submitForm() {
+    // tslint:disable-next-line: triple-equals
+    if (this.userDetails.pincode.length !== 6) {
+      return this.alertService.showErrorMesg('pleas enter the pincode');
+    }
+    if (this.userDetails.state == '') {
+      return this.alertService.showErrorMesg('pleas change the pincode for fectch state');
+
+      // tslint:disable-next-line: align
+    } if (this.userDetails.district == '') {
+      return this.alertService.showErrorMesg('pleas change the pincode for fectch District');
+
+      // tslint:disable-next-line: align
+    } if (this.userDetails.block == '') {
+      return this.alertService.showErrorMesg('pleas select block');
+
+      // tslint:disable-next-line: align
+    } if (this.userDetails.locality == '') {
+      return this.alertService.showErrorMesg('pleas enter the Locality');
+
+      // tslint:disable-next-line: align
+    } if (this.userDetails.description == '') {
+      return this.alertService.showErrorMesg('pleas enter the description');
+
+      // tslint:disable-next-line: align
+    } if (this.userDetails.informerName == '') {
+      return this.alertService.showErrorMesg('pleas enter Informer Name');
+
+      // tslint:disable-next-line: align
+    } if (this.userDetails.informerPhone == '') {
+      return this.alertService.showErrorMesg('pleas enter Informer Phone');
+
+      // tslint:disable-next-line: align
+    }
+    this.SaveUserDeatils();
+    // if (this.userDetails.description == '') {
+
+    //   // tslint:disable-next-line: align
+    // } if (this.userDetails.description == '') {
+
+    // }
+  }
+
+  onBlockSelect(item) {
+    console.log(item, this.slectedBlock);
+    this.userDetails.block = item;
+  }
+
 }
+
+
+
+
+
+

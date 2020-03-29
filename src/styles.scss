@@ -3,8 +3,10 @@ body{
 	padding: 0;
 	font-family: 'Roboto', sans-serif;
 }
-.main-part{
-	background: url(assets/img/baground.png);
+.main-part {
+    // background: url(assets/img/bagroundmin.png);
+    background: url(assets/img/bagroundmin.png);
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -160,7 +162,7 @@ letter-spacing: 1px;
 
 
 .main-part-2{
-	background: url(assets/img/bg-half.png);
+	background: url(assets/img/bg-half-min.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -234,3 +236,195 @@ letter-spacing: 1px;
     border-color: #F2B91D;
 }
 
+.mobile-show{
+	display: none;
+}
+.mobile-hide{
+	display: visible
+}
+.mo-show-main{
+	display: none;
+}
+.mo-hide-main{
+	display: visible
+}
+
+.view-detail{
+	color: blue !important;
+    font-weight: bold !important;
+}
+
+/*====================responsive=========================*/
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+.mobile-main-part{
+	background: url(assets/img/mo-responsive-banner-min.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100vh;
+    display: block !important;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 5%;
+}
+.w-100per{
+	width: 100%;
+}
+.yellow-btn {
+    /*padding: 10px 20px;
+    font-size: 17px;*/
+    margin-bottom: 10px;
+    width: 100%;
+}
+.yellow-border-btn{
+    /*padding: 5px 10px;
+    font-size: 13px;*/
+}
+.main-content h5 {
+    font-size: 14px;
+    line-height: 25px;
+    width: 75%;
+    margin-bottom: 25px;
+}
+.main-content h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+.cases-list {
+    margin-bottom: 0;
+}
+.case-study {
+    padding: 30px 0 0px 0;
+}
+.cases-list li {
+    font-size: 15px;
+    line-height: 17px;
+    padding: 0 18px;
+    margin-bottom: 0px;
+}
+h5 {
+	font-size: 16px;
+    margin-top: 0px;
+    margin-bottom: 18px;
+    line-height: 24px;
+}
+hr {
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+.image-part p {
+    font-size: 14px;
+}
+.image-part h4 {
+    font-size: 20px;
+    margin-bottom: 18px;
+    margin-top: 20px;
+}
+.mobile-show{
+	display: block;
+}
+.mobile-hide{
+	display: none !important;
+}
+.padding-inside {
+    padding: 0px;
+}
+.main-part-2 {
+    padding: 16px;
+}
+.main-part-2 h2 {
+    line-height: 30px;
+    font-size: 16px;
+}
+.form-part {
+    width: 100%;
+}
+.bg-form {
+    margin-bottom: 0px;
+    padding: 15px 20px 0px 20px;
+}
+.form-group {
+    margin-bottom: .7rem;
+}
+::placeholder { /* Firefox, Chrome, Opera */ 
+    color: #000 !important; 
+    font-size: 14px;
+} 
+
+.submit-btn {
+    padding: 6px 30px;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+.bg-form h6 {
+    margin-bottom: -5px;
+}
+.btn-with-content {
+    margin-top: 25px;
+}
+.mo-center{
+	text-align: center;
+}
+.btn-with-content .yellow-btn {
+     float: none
+}
+.footer {
+    padding: 20px 20px 15px 20px;
+}
+.footer h4 {
+    line-height: 26px;
+    font-size: 20px;
+}
+.mo-set{
+	margin-top: 5px;
+}
+.mo-hide-main{
+	display: none;
+}
+.mo-show-main {
+    display: block !important;
+}
+.co-detail{
+	padding-left: 0;
+}
+.co-detail li{
+	list-style-type: none;
+}
+.co-detail .lst-font {
+    font-size: 18px !important;
+    line-height: 22px;
+}
+.co-detail .lst-font span{
+    font-size: 13px !important;
+}
+.view-detail{
+	color: blue;
+    text-align: right;
+    float: right;
+    font-weight: bold;
+}
+
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+// @media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up) */
+// @media only screen and (min-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up) */
+// @media only screen and (min-width: 992px) {...}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+// @media only screen and (min-width: 1200px) {...}
+
+
+
+
+
+.form-group label {
+    font-size: 12px;
+}

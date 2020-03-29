@@ -12,7 +12,10 @@ import { NeedHelpComponent } from './component/form/need-help/need-help.componen
 import { IWantToHelpComponent } from './component/form/i-want-to-help/i-want-to-help.component';
 import { HomeComponent } from './component/home/home.component';
 import { LoginComponent } from './component/login/login.component';
-
+import { FooterComponent } from './core/footer/footer.component';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +23,8 @@ import { LoginComponent } from './component/login/login.component';
     NeedHelpComponent,
     IWantToHelpComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,9 @@ import { LoginComponent } from './component/login/login.component';
     AppRoutingModule,
     DataTableModule,
     HttpClientModule,
-    NgMultiSelectDropDownModule.forRoot()
+    NgMultiSelectDropDownModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
 
   ],
   providers: [],

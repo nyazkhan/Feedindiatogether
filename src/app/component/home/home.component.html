@@ -1,4 +1,4 @@
-<div class="main-part">
+<div class="main-part mobile-main-part">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -9,8 +9,9 @@
                     </h5>
 
                     <div class="btn-part">
-                        <a routerLink="/i-want-to-help" class="btn yellow-btn">I want to help</a>
-                        <a routerLink="/people-need-help" class="btn yellow-border-btn">I know someone who Need help</a>
+                        <a routerLink="/i-want-to-help" class="btn yellow-btn w-100per">I want to help</a>
+                        <a routerLink="/people-need-help" class="btn yellow-border-btn w-100per">I know someone who Need
+                            help</a>
                     </div>
                 </div>
             </div>
@@ -20,7 +21,7 @@
 
 
 
-<div class="case-study">
+<div class="case-study mo-hide-main">
     <div class="container">
         <div class="row">
             <div class="col-md-5">
@@ -33,8 +34,10 @@
                     </li>
                     <li style="color: #109A2A">{{corornaVirusPatient.recovered}}<br><span>Recovered</span></li>
                     <li style="color: #7C7C7C">{{corornaVirusPatient.deaths}}<br><span>Deceased</span></li>
-                    <li style="color: #000" class="lst-font">Corona Cases India<br><span
-                            style="color: #000000; opacity: .4;">Updated {{corornaVirusPatient.date | date:'EEE,  d MMM ,  y'}}</span></li>
+                    <li class="mobile-hide" style="color: #000;border-right: none" class="lst-font">Corona Cases
+                        India<br><span style="color: #000000; opacity: .4;">Updated
+                            {{corornaVirusPatient.date | date:'EEE,  d MMM ,  y'}}</span><br><span
+                            class="view-detail">View Detail</span></li>
                 </ul>
             </div>
         </div>
@@ -42,7 +45,29 @@
     </div>
 </div>
 
-
+<div class="case-study mo-show-main">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <ul class="co-detail">
+            <li style="color: #000" class="lst-font">Corona Cases India<br><span
+                style="color: #000000; opacity: .4;">Updated  {{corornaVirusPatient.date | date:'EEE,  d MMM ,  y'}}</span> <span
+                class="view-detail">View Detail</span></li>
+          </ul>
+          <ul class="cases-list">
+            <li style="color: #EB3535">{{corornaVirusPatient.confirmed}}<br><span>Confirmed</span></li>
+            <li style="color: #156ADE">{{corornaVirusPatient.active }}<br><span>Active</span></li>
+            <li style="color: #109A2A">{{corornaVirusPatient.recovered}}<br><span>Recovered</span></li>
+            <li style="color: #7C7C7C;border-right: none;">{{corornaVirusPatient.deaths}}<br><span>20</span></li>
+          </ul>
+          <hr>
+        </div>
+        <div class="col-md-5">
+          <h5 style="margin-bottom: 0;" class="mo-set">How can i help people while staying safe at home ?</h5>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 <div class="image-part">
@@ -63,7 +88,7 @@
 
                 <div class="row btn-with-content">
                     <div class="col-md-6">
-                        <h5>Do you want to help ?</h5>
+                        <h5 class="mo-center">Do you want to help ?</h5>
                     </div>
                     <div class="col-md-6">
                         <a routerLink="/people-need-help" class="btn yellow-btn">Yes, List me as volunteer</a>
@@ -71,7 +96,7 @@
                 </div>
             </div>
             <div class="col-md-5">
-                <img src="assets/img/Volenteer.png">
+                <img src="assets/img/Volenteer-min.png">
             </div>
         </div>
     </div>
@@ -97,7 +122,7 @@
 
                 <div class="row btn-with-content">
                     <div class="col-md-6">
-                        <h5>Do you know someone who need help?</h5>
+                        <h5 class="mo-center">Do you know someone who need help?</h5>
                     </div>
                     <div class="col-md-6">
                         <a routerLink="/i-want-to-help" class="btn yellow-btn">Yes, Ask for help</a>
@@ -105,20 +130,9 @@
                 </div>
             </div>
             <div class="col-md-5">
-                <img src="assets/img/volenteer-1.png">
+                <img src="assets/img/volenteer-1-min.png">
             </div>
         </div>
     </div>
 </div>
-
-
-
-<div class="footer">
-    <div class="row">
-        <div class="col-md-12">
-            <h4>Fight Corona Feed India Together</h4>
-            <p>Let’s pool our resources together and help everyone through these tough times your small steps have power
-                to make big impacts</p>
-        </div>
-    </div>
-</div>
+<app-footer></app-footer>
