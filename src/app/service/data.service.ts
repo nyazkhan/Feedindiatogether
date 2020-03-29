@@ -23,4 +23,11 @@ export class DataService {
     // return this.http.get('   https://corona-status-live-api.herokuapp.com/api/data/Delhi%20(India)?date=2020-3-29');
 
   }
+
+  getStateWiseData() {
+    return this.http.get('https://ameerthehacker.github.io/corona-india-status/covid19-indian-states.json');
+
+  }
+
+
 }

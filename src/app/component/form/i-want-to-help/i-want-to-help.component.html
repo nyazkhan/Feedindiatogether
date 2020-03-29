@@ -6,7 +6,7 @@
                     <h2>Stay Calm, Help Is On The Way <br> Fill Details Below</h2>
                 </div>
                 <div class="btn-part">
-                    <a routerLink="/home" class="btn yellow-btn">Back To Home</a>
+                    <a routerLink="/home" class="btn yellow-btn" style="width: 40%;">Back To Home</a>
 
                 </div>
             </div>
@@ -17,95 +17,168 @@
 
 <div class="form-part">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12 bg-form">
-                <h5 class="field-title">Set Location</h5>
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <input type="number" class="form-control" id="inputPincode" placeholder="Enter Pincode">
-                    </div>
+        <form #userDetailsForm="ngForm">
 
-                    <div class="form-group col-md-2">
-                        <input type="text" class="form-control" id="inputState" placeholder="State">
-                    </div>
+            <div class="row">
+                <div class="col-md-12 bg-form">
+                    <h5 class="field-title">Set Location</h5>
+                    <div class="form-row">
+                        <div class="form-group col-md-2">
+                            <label for="inputPincode">
+                                Pin code <span style="color: red;">*</span>
 
-                    <div class="form-group col-md-2">
-                        <input type="text" class="form-control" id="inputDistrict" placeholder="District">
-                    </div>
 
-                    <div class="form-group col-md-2">
-                        <input type="text" class="form-control" id="inputBlock" placeholder="Block">
+                            </label>
+                            &nbsp;
+                            <button type="button" class="btn btn-sm btn-primary" [disabled]="!pincode.valid"
+                                (click)="findPlace()">
+                                Find</button>
+                            <input type="text" (keyup)="checkPincode($event)" pattern="^[0-9]{6,6}$" #pincode="ngModel"
+                                required class="form-control" name="pincode" id="pincode"
+                                [(ngModel)]="userDetails.pincode" placeholder="Enter Pincode">
+
+                        </div>
+
+                        <div class="form-group col-md-2">
+                            <label for="inputState">
+                                State <span style="color: red;">*</span>
+
+                            </label>
+                            <input type="text" class="form-control" name=" state" id="inputState"
+                                [(ngModel)]="userDetails.state" disabled placeholder="State">
+                        </div>
+
+                        <div class="form-group col-md-2">
+                            <label for="inputDistrict">
+                                District <span style="color: red;">*</span>
+
+                            </label>
+                            <input type="text" class="form-control" name="district" id="inputDistrict"
+                                [(ngModel)]="userDetails.district" disabled placeholder="District">
+                        </div>
+
+                        <div class="form-group col-md-2">
+                            <label for="inputBlock">
+                                Block <span style="color: red;">*</span>
+
+                            </label>
+                            <ng-multiselect-dropdown [placeholder]="'Select Block '" [data]="blockArray"
+                                [(ngModel)]="slectedBlock" [ngModelOptions]="{standalone: true}"
+                                (onSelect)="onBlockSelect($event)" [settings]="blockSettings">
+                            </ng-multiselect-dropdown>
+                            <!-- <input type="text" class="form-control" id="inputBlock" placeholder="Block"> -->
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label for="inputLandmark">
+                                Landmark Nearby <span style="color: red;">*</span>
+
+                            </label>
+                            <input type="text" class="form-control" name="inputLandmark" id="inputDistrict"
+                                [(ngModel)]="userDetails.locality" placeholder="Any Famous Landmark Nearby">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 bg-form">
+                    <h5 class="field-title">What Type Of Help You Can Do? <span style="color: red;">*</span>
+                    </h5>
+                    <div class="form-row">
+                        <div class="form-group col-md-2">
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox"
+                                    [(ngModel)]="userDetails.serviceType.food" name="food" id="food">
+                                <label class="form-check-label" for="food">
+                                    Food
+                                </label>
+                            </div>
+
+
+                        </div>
+                        <div class="form-group col-md-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox"
+                                    [(ngModel)]="userDetails.serviceType.shelter" name="shelter" id="shelter">
+                                <label class="form-check-label" for="shelter">
+                                    Shelter
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox"
+                                    [(ngModel)]="userDetails.serviceType.clothes" name="clothes" id="clothes">
+                                <label class="form-check-label" for="clothes">
+                                    Clothes
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox"
+                                    [(ngModel)]="userDetails.serviceType.other" name="other" id="other">
+                                <label class="form-check-label" for="other">
+                                    Other
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label for="noOfPersons">
+                                Number of person You can help <span style="color: red;">*</span>
+
+                            </label>
+                            <input type="number" class="form-control" pattern="^[0-9]{6,6}$" id="noOfPersons"
+                                name="noOfPersons" [(ngModel)]="userDetails.noOfPersons"
+                                placeholder="Number of person who need help">
+                        </div>
+                        <div class="form-group col-md-7">
+                            <label for="description">
+                                Description
+                            </label>
+                            <input type="text" class="form-control" id="description" name="description"
+                                [(ngModel)]="userDetails.description"
+                                placeholder="Describe in words like you can help people with food for 10 days and for shelter you can help for a month">
+                        </div>
                     </div>
 
                 </div>
+
+                <div class="col-md-12 bg-form">
+                    <h5 class="field-title">Add Your Details</h5>
+                    <h6>Your details are important as someone responsible will contact you and will take your help to
+                        others
+                        who need that help. Please don't step out from home. You can help others staying at home.</h6>
+                    <br>
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                            <label for="donerName">
+                                Full Name <span style="color: red;">*</span>
+
+                            </label>
+                            <input type="text" class="form-control" name="donerName" id="donerName"
+                                [(ngModel)]="userDetails.donerName" placeholder="Full Name">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="donerPhone">
+                                Mobile Number <span style="color: red;">*</span>
+
+
+                            </label>
+                            <input type="number" class="form-control" name="donerPhone" id="donerPhone"
+                                [(ngModel)]="userDetails.donerPhone" placeholder="Mobile Number">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 bg-form" style="background-color: #fff;margin-bottom: 30px;">
+                    <a class="btn yellow-btn w-100per" (click)="submitForm()">Submit</a>
+                    <a routerLink="/home" class="btn yellow-border-btn w-100per">Back to Home</a>
+                </div>
+
             </div>
-
-            <div class="col-md-12 bg-form">
-                <h5 class="field-title">What Type Of Help You Can Do?</h5>
-                <div class="form-row">
-                    <div class="form-group col-md-2">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck">
-                            <label class="form-check-label" for="gridCheck">
-                                Food
-                            </label>
-                        </div>
-                    </div>
-                    <div class="form-group col-md-2">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck">
-                            <label class="form-check-label" for="gridCheck">
-                                Shelter
-                            </label>
-                        </div>
-                    </div>
-                    <div class="form-group col-md-2">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck">
-                            <label class="form-check-label" for="gridCheck">
-                                Clothes
-                            </label>
-                        </div>
-                    </div>
-                    <div class="form-group col-md-2">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck">
-                            <label class="form-check-label" for="gridCheck">
-                                Others
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-row">
-                    <div class="form-group col-md-8">
-                        <input type="text" class="form-control"
-                            placeholder="Describe in words like you can help people with food for 10 days and for shelter you can help for a month">
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-12 bg-form">
-                <h5 class="field-title">Add Your Details</h5>
-                <h6>Your details are important as someone responsible will contact you and will take your help to others
-                    who need that help. Please don't step out from home. You can help others staying at home.</h6>
-                <br>
-                <div class="form-row">
-                    <div class="form-group col-md-3">
-                        <input type="text" class="form-control" id="inputFullName" placeholder="Full Name">
-                    </div>
-                    <div class="form-group col-md-4">
-                        <input type="number" class="form-control" id="inputMobile" placeholder="Mobile Number">
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-12 bg-form" style="background-color: #fff;margin-bottom: 30px;">
-                <a href="#" class="btn yellow-btn w-100per">Submit</a>
-                <a routerLink="/home" class="btn yellow-border-btn w-100per">Back to Home</a>
-          </div>
-
-        </div>
+        </form>
     </div>
 </div>
 

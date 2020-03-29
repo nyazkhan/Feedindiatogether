@@ -74,8 +74,8 @@ export class NeedHelpComponent implements OnInit {
 
   SaveUserDeatils() {
     console.log(this.userDetails);
-
     this.firestore.collection('NeedHelp').add(this.userDetails).then((docRef) => {
+      this.alertService.showSuccessMesg('Thankyou For reporting us. we will contact you soon.');
       this.router.navigate(['/home']);
 
 
@@ -132,7 +132,10 @@ export class NeedHelpComponent implements OnInit {
       return this.alertService.showErrorMesg('pleas change the pincode for fectch District');
 
       // tslint:disable-next-line: align
-    } if (this.userDetails.block == '') {
+    }
+    console.log(this.slectedBlock.length);
+
+    if ((this.slectedBlock.length < 1)) {
       return this.alertService.showErrorMesg('pleas select block');
 
       // tslint:disable-next-line: align
@@ -140,7 +143,18 @@ export class NeedHelpComponent implements OnInit {
       return this.alertService.showErrorMesg('pleas enter the Locality');
 
       // tslint:disable-next-line: align
-    } if (this.userDetails.description == '') {
+    }
+
+    if (!(this.userDetails.serviceType.food || this.userDetails.serviceType.clothes ||
+      this.userDetails.serviceType.shelter || this.userDetails.serviceType.other)) {
+      return this.alertService.showErrorMesg('pleas select help type');
+
+    }
+    if (this.userDetails.noOfPersons == '') {
+      return this.alertService.showErrorMesg('pleas enter no of people');
+
+    }
+    if (this.userDetails.description == '') {
       return this.alertService.showErrorMesg('pleas enter the description');
 
       // tslint:disable-next-line: align
@@ -148,7 +162,7 @@ export class NeedHelpComponent implements OnInit {
       return this.alertService.showErrorMesg('pleas enter Informer Name');
 
       // tslint:disable-next-line: align
-    } if (this.userDetails.informerPhone == '') {
+    } if (!this.isValidPhone(this.userDetails.informerPhone)) {
       return this.alertService.showErrorMesg('pleas enter Informer Phone');
 
       // tslint:disable-next-line: align
@@ -166,7 +180,20 @@ export class NeedHelpComponent implements OnInit {
     console.log(item, this.slectedBlock);
     this.userDetails.block = item;
   }
+  isValidPhone(no) {
+    const reg = /^[0-9]{10,10}$/;
 
+    if (reg.test(no) === false) {
+      // alert('Invalid Email Address');
+      console.log('false');
+
+      return false;
+    }
+    console.log('true');
+
+    return true;
+
+  }
 }
 
 

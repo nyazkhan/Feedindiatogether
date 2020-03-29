@@ -16,6 +16,12 @@ export class HomeComponent implements OnInit {
 
   };
   todayscount: any;
+  StateData: any;
+  date: any;
+  confirmed: any;
+  deaths: any;
+  recovered: any;
+  active: any;
   constructor(
     @Inject(DataService) private dataService: DataService,
 
@@ -32,6 +38,16 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+    // this.dataService.getStateWiseData().subscribe((res: any) => {
+    //   this.date =res.lastUpdated;
+    //   res.data.map(element => {
+
+    //   });
+    //   for (let i = 0; i < res.data.length; i++) {
+    //     const element = res.data[i];
+
+    //   }
+    // });
   }
 
 }

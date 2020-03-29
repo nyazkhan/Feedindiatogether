@@ -14,7 +14,7 @@ export class AlertService {
       icon: 'success',
       title: mesg || 'Successfull',
       showConfirmButton: false,
-      timer: 1500
+      timer: 2500
     });
   }
   showErrorMesg( errmsg?) {

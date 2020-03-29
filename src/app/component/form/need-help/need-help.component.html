@@ -26,6 +26,7 @@
                         <div class="form-group col-md-2">
                             <label for="inputPincode">
                                 Pin code
+                                <span style="color: red;">*</span>
 
                             </label>
                             &nbsp;
@@ -40,7 +41,8 @@
 
                         <div class="form-group col-md-2">
                             <label for="inputState">
-                                State
+                                State <span style="color: red;">*</span>
+
                             </label>
                             <input type="text" class="form-control" name=" state" id="inputState"
                                 [(ngModel)]="userDetails.state" disabled placeholder="State">
@@ -48,7 +50,8 @@
 
                         <div class="form-group col-md-2">
                             <label for="inputDistrict">
-                                District
+                                District <span style="color: red;">*</span>
+
                             </label>
                             <input type="text" class="form-control" name="district" id="inputDistrict"
                                 [(ngModel)]="userDetails.district" disabled placeholder="District">
@@ -56,7 +59,8 @@
 
                         <div class="form-group col-md-2">
                             <label for="inputBlock">
-                                Block
+                                Block <span style="color: red;">*</span>
+
                             </label>
                             <ng-multiselect-dropdown [placeholder]="'Select Block '" [data]="blockArray"
                                 [(ngModel)]="slectedBlock" [ngModelOptions]="{standalone: true}"
@@ -67,17 +71,18 @@
 
                         <div class="form-group col-md-3">
                             <label for="inputLandmark">
-                                Landmark Nearby
+                                Landmark Nearby <span style="color: red;">*</span>
+
                             </label>
-                            <input type="text" class="form-control"  name="inputLandmark" id="inputDistrict"
-                            [(ngModel)]="userDetails.locality"
-                                placeholder="Any Famous Landmark Nearby">
+                            <input type="text" class="form-control" name="inputLandmark" id="inputDistrict"
+                                [(ngModel)]="userDetails.locality" placeholder="Any Famous Landmark Nearby">
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-12 bg-form">
-                    <h5 class="field-title">Type Of Help Needed</h5>
+                    <h5 class="field-title">Type Of Help Needed <span style="color: red;">*</span>
+                    </h5>
                     <div class="form-row">
                         <div class="form-group col-md-2">
 
@@ -124,15 +129,16 @@
                     <div class="form-row">
                         <div class="form-group col-md-5">
                             <label for="noOfPersons">
-                                Number of person who need help
+                                Number of person who need help <span style="color: red;">*</span>
+
                             </label>
-                            <input type="text" class="form-control"  id="noOfPersons" name="noOfPersons"
-                            [(ngModel)]="userDetails.noOfPersons"
-                                placeholder="Number of person who need help">
+                            <input type="text" class="form-control" id="noOfPersons" name="noOfPersons"
+                                [(ngModel)]="userDetails.noOfPersons" placeholder="Number of person who need help">
                         </div>
                         <div class="form-group col-md-7">
                             <label for="description">
-                                Description
+                                Description <span style="color: red;">*</span>
+
                             </label>
                             <input type="text" class="form-control" id="description" name="description"
                                 [(ngModel)]="userDetails.description"
@@ -148,14 +154,16 @@
                     <div class="form-row">
                         <div class="form-group col-md-3">
                             <label for="informerName">
-                                Informer Full Name
+                                Informer Full Name <span style="color: red;">*</span>
+
                             </label>
                             <input type="text" class="form-control" name="informerName" id="informerName"
                                 [(ngModel)]="userDetails.informerName" placeholder="Full Name">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="informerPhone">
-                                Informer Mobile Number
+                                Informer Mobile Number <span style="color: red;">*</span>
+
 
                             </label>
                             <input type="number" class="form-control" name="informerPhone" id="informerPhone"
@@ -188,7 +196,7 @@
                     </div>
                 </div>
                 <div class="col-md-12 bg-form" style="background-color: #fff;margin-bottom: 30px;">
-                    <a  class="btn yellow-btn w-100per" (click)="submitForm()">Submit</a>
+                    <a class="btn yellow-btn w-100per" (click)="submitForm()">Submit</a>
                     <a routerLink="/home" class="btn yellow-border-btn w-100per">Back to Home</a>
                 </div>
 
