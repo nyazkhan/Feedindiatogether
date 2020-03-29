@@ -1,0 +1,151 @@
+<div class="container bootstrap snippet">
+
+    <div class="row">
+        <!-- <div class="col-md-3">
+            <ng-multiselect-dropdown [placeholder]="'Select address '" [data]="addressDropdownListLevel1"
+            [(ngModel)]="NeedyDetails.address1"   (onSelect)="onItemSelectL1($event)"
+            [settings]="addressSettings">
+          </ng-multiselect-dropdown>
+        </div>
+        <div class="col-md-3">
+            <ng-multiselect-dropdown [placeholder]="'Select address '" [data]="addressDropdownListLevel2"
+            [(ngModel)]="NeedyDetails.address2"   (onSelect)="onItemSelectL2($event)"
+            [settings]="addressSettings">
+          </ng-multiselect-dropdown>
+        </div>
+        <div class="col-md-3">
+            <ng-multiselect-dropdown [placeholder]="'Select address '" [data]="addressDropdownListLevel3"
+            [(ngModel)]="NeedyDetails.address3"   (onSelect)="onItemSelectL3($event)"
+            [settings]="addressSettings">
+          </ng-multiselect-dropdown>
+        </div>
+        <div class="col-md-3">
+            <ng-multiselect-dropdown [placeholder]="'Select address '" [data]="addressDropdownListLevel4"
+            [(ngModel)]="NeedyDetails.address4"   (onSelect)="onItemSelectL4($event)"
+            [settings]="addressSettings">
+          </ng-multiselect-dropdown>
+        </div> -->
+   <div class="col-md-4">
+
+       <input matInput  type="text" class="form-control" (keyup)="filterData($event)" name="search"
+       placeholder="search text goes here">
+   </div>
+   
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-sm-3">
+
+        </div>
+        <div class="col-sm-9">
+
+            <form class="form" action="##" method="post" id="registrationForm">
+                <div class="form-group">
+
+                    <div class="col-xs-6">
+                        <label for="first_name">
+                            <h4>First name</h4>
+                        </label>
+                        <input type="text" class="form-control" name="first_name" id="first_name"
+                            [(ngModel)]="NeedyDetails.first" placeholder="first name"
+                            title="enter your first name if any.">
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <div class="col-xs-6">
+                        <label for="last_name">
+                            <h4>Last name</h4>
+                        </label>
+                        <input type="text" class="form-control" name="last_name" id="last_name"
+                            [(ngModel)]="NeedyDetails.last" placeholder="last name"
+                            title="enter your last name if any.">
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <div class="col-xs-6">
+                        <label for="phone">
+                            <h4>Phone</h4>
+                        </label>
+                        <input type="text" class="form-control" name="phone" id="phone" [(ngModel)]="NeedyDetails.phone"
+                            placeholder="enter phone" title="enter your phone number if any.">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-xs-6">
+                        <label for="mobile">
+                            <h4>Mobile</h4>
+                        </label>
+                        <input type="text" class="form-control" name="mobile" id="mobile"
+                            [(ngModel)]="NeedyDetails.cell" placeholder="enter mobile number"
+                            title="enter your mobile number if any.">
+                    </div>
+                </div>
+                <div class="form-group">
+
+                    <div class="col-xs-6">
+                        <label for="email">
+                            <h4>Email</h4>
+                        </label>
+                        <input type="email" class="form-control" name="email" id="email"
+                            [(ngModel)]="NeedyDetails.email" placeholder="you@email.com" title="enter your email.">
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <br>
+                        <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i>
+                            Save</button>
+                    </div>
+                </div>
+            </form>
+
+
+
+        </div>
+    </div>
+<!-- <div class="row">
+<div class="col-md-12">
+    <table class="table table-striped" [mfData]="allData" #mf="mfDataTable" [mfRowsOnPage]="10">
+        <thead>
+        <tr>
+            <th style="width: 20%">
+                <mfDefaultSorter by="villagename">villagename</mfDefaultSorter>
+            </th>
+            <th style="width: 50%">
+                <mfDefaultSorter by="locality_detail1">locality_detail1</mfDefaultSorter>
+            </th>
+            <th style="width: 10%">
+                <mfDefaultSorter by="locality_detail3">locality_detail3</mfDefaultSorter>
+            </th>
+            <th style="width: 20%">
+                <mfDefaultSorter by="Pincode">Pincode</mfDefaultSorter>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of mf.data">
+            <td>{{item.villagename}}</td>
+            <td>{{item.locality_detail1}}</td>
+            <td class="text-right">{{item.locality_detail3}}</td>
+            <td>{{item.Pincode | uppercase}}</td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="4">
+                <mfBootstrapPaginator [rowsOnPageSet]="[10,20,30]"></mfBootstrapPaginator>
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+</div> -->
+</div>

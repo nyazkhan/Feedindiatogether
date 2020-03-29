@@ -1,0 +1,330 @@
+<div class="main-part-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="main-content">
+            <h2>Stay Calm, Help Is On The Way <br> Fill Details Below</h2>
+          </div>
+          <div class="btn-part">
+            <a routerLink="/home" class="btn yellow-btn">Back To Home</a>
+            
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="form-part">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 bg-form">
+          <h5 class="field-title">Set Location</h5>
+           <div class="form-row">
+            <div class="form-group col-md-3">
+              <input type="number" class="form-control" id="inputPincode" placeholder="Enter Pincode">
+            </div>
+  
+            <div class="form-group col-md-2">
+              <input type="text" class="form-control" id="inputState" placeholder="State">
+            </div>
+  
+            <div class="form-group col-md-2">
+              <input type="text" class="form-control" id="inputDistrict" placeholder="District">
+            </div>
+  
+            <div class="form-group col-md-2">
+              <input type="text" class="form-control" id="inputBlock" placeholder="Block">
+            </div>
+  
+            <div class="form-group col-md-3">
+              <input type="text" class="form-control" id="inputLandmark" placeholder="Any Famous Landmark Nearby">
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-12 bg-form">
+          <h5 class="field-title">Type Of Help Needed</h5>
+          <div class="form-row">
+            <div class="form-group col-md-2">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                  Food
+                </label>
+              </div>
+            </div>
+            <div class="form-group col-md-2">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                  Shelter
+                </label>
+              </div>
+            </div>
+            <div class="form-group col-md-2">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                  Clothes
+                </label>
+              </div>
+            </div>
+            <div class="form-group col-md-2">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                  Others
+                </label>
+              </div>
+            </div>
+          </div>
+  
+           <div class="form-row">
+            <div class="form-group col-md-3">
+              <input type="text" class="form-control" id="inputPincode" placeholder="Number of person who need help">
+            </div>
+            <div class="form-group col-md-7">
+              <input type="text" class="form-control" id="inputState" placeholder="Describe in words like here are 15 person who need food and 5 person need clothes">
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-12 bg-form">
+          <h5 class="field-title">Add Your Details</h5>
+          <h6>Your details are important as person who wants to help will contact you to reach them.</h6>
+          <br>
+           <div class="form-row">
+            <div class="form-group col-md-3">
+              <input type="text" class="form-control" id="inputFullName" placeholder="Full Name">
+            </div>
+            <div class="form-group col-md-4">
+              <input type="number" class="form-control" id="inputMobile" placeholder="Mobile Number">
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-12 bg-form">
+          <h5 class="field-title">Add Details Of Person Who Needs Help</h5>
+          <h6>Add details of person who need help so we can contact directly to him.</h6>
+          <br>
+           <div class="form-row">
+            <div class="form-group col-md-3">
+              <input type="text" class="form-control" id="inputFullName" placeholder="Full Name">
+            </div>
+            <div class="form-group col-md-4">
+              <input type="number" class="form-control" id="inputMobile" placeholder="Mobile Number">
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-12 bg-form" style="background-color: #fff;">
+         <button type="submit" class="btn submit-btn btn-warning">Submit</button>
+        </div>
+  
+         
+  
+  
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="row">
+
+
+
+    <div class="col-md-12">
+        <form #userForm="ngForm">
+            <p> Enter the Deatils how need help</p>
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="form-group">
+
+                        <label for="needyName">
+                            Full Name
+                        </label>
+                        <input type="text" class="form-control" name="needyName" id="needyName"
+                            [(ngModel)]="userDetails.needyName" placeholder="Needy Full Name"
+                            title="enter full name  who need help">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+
+                        <label for="needyPhone">
+                            Contact Number
+                        </label>
+                        <input type="text" class="form-control" name="needyPhone" id="needyPhone"
+                            [(ngModel)]="userDetails.needyPhone" placeholder="Needy Full Name"
+                            title="enter your  Contact Number ">
+                    </div>
+                </div>
+            </div>
+            <p> Enter the Deatils how inform </p>
+            <div class="row">
+
+
+                <div class="col-md-6">
+                    <div class="form-group">
+
+                        <label for="informerName">
+                            Full Name
+                        </label>
+                        <input type="text" class="form-control" name="informerName" id="informerName"
+                            [(ngModel)]="userDetails.informerName" placeholder=" informer Full Name">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+
+                        <label for="informerPhone">
+                            Contact Number
+                        </label>
+                        <input type="text" class="form-control" name="informerPhone" id="informerPhone"
+                            [(ngModel)]="userDetails.informerPhone" placeholder="Informer Full Name"
+                            title="enter your full name ">
+                    </div>
+                </div>
+            </div>
+            <p> Type of help </p>
+
+            <div class="row">
+
+                <div class="col-md-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" [(ngModel)]="userDetails.serviceType.food"
+                            name="food" id="food">
+                        <label class="form-check-label" for="food">
+                            Food
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" [(ngModel)]="userDetails.serviceType.clothes"
+                            name="clothes" id="clothes">
+                        <label class="form-check-label" for="clothes">
+                            Clothes
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" [(ngModel)]="userDetails.serviceType.shelter"
+                            name="shelter" id="shelter">
+                        <label class="form-check-label" for="shelter">
+                            Shelter
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" [(ngModel)]="userDetails.serviceType.other"
+                            name="other" id="other">
+                        <label class="form-check-label" for="other">
+                            Other
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <textarea id="description" name="description" rows="4" cols="50"
+                        [(ngModel)]="userDetails.description"></textarea>
+                </div>
+
+            </div>
+            <p>Search address on the basis of pincode</p>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+
+                        <label for="pincode">
+                            pincode
+                        </label>
+                        <input type="text" class="form-control " name="pincode" id="pincode"
+                            [(ngModel)]="userDetails.pincode"  pattern="^[0-9]{6}$" required
+                            placeholder="Please enter Aear Pin code">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+
+                    <button type="button" class="btn btn-primary" (click)="findPlace()">
+                        Find Place
+                    </button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+
+                        <label for="state">
+                            State
+                        </label>
+                        <input type="text" class="form-control " name="state" id="state" [(ngModel)]="userDetails.state"
+                            disabled>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+
+                        <label for="district">
+                            District
+                        </label>
+                        <input type="text" class="form-control " name="district" id="district"
+                            [(ngModel)]="userDetails.district" required disabled>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+
+                        <label >
+                            Block
+                        </label>
+                        <ng-multiselect-dropdown [placeholder]="'Select address '" [data]="blockArray"
+                            [(ngModel)]="slectedBlock" [ngModelOptions]="{standalone: true}"
+                            (onSelect)="onBlockSelect($event)" [settings]="blockSettings">
+                        </ng-multiselect-dropdown>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+
+                        <label for="locality">
+                            Locality
+                        </label>
+                        <input type="text" class="form-control " name="locality" id="locality"
+                            [(ngModel)]="userDetails.locality" required>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </form>
+    </div>
+
+</div> -->

@@ -1,1 +1,236 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+}
+.main-part{
+	background: url(assets/img/baground.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100vh;
+    display: grid;
+    align-items: center;
+    overflow: hidden;
+}
+.main-content h1{
+	text-align: left;
+	font-size:50px;
+	letter-spacing: 0;
+	color: #FFFFFF;
+	opacity: 1;
+	font-weight: bold;
+	margin-bottom: 22px;
+}
+.main-content h5{
+	text-align: left;
+	font-size:15px;
+	letter-spacing: 0;
+	color: #FFFFFF;
+	opacity: 1;
+	line-height: 27px;
+	font-weight: 300;
+	width: 50%;
+	margin-bottom: 50px;
+}
+.yellow-btn{
+	background: #F2B91D 0% 0% no-repeat padding-box;
+	opacity: 1;
+	color: black;
+	padding: 15px 30px;
+	font-weight: 600;
+	border:2px solid #F2B91D;
+	margin-right: 15px;border-radius: 0;
+}
+.yellow-border-btn{
+	background:transparent 0% 0% no-repeat padding-box;
+	border:2px solid #F2B91D;
+	opacity: 1;
+	color: black;
+	padding: 15px 30px;
+	font-weight: 600;
+	color: #F2B91D;
+	border-radius: 0;
+
+}
+.yellow-border-btn:hover{
+	color: #F2B91D;
+}
+
+
+
+.case-study{
+	background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: grid;
+    align-items: center;
+    overflow: hidden;
+    padding: 40px 0 65px 0;
+}
+h5{
+	font-size: 16px;
+	color: #000;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.cases-list{
+	padding-left: 0;
+}
+.cases-list li{
+	list-style-type: none;
+	font-size: 18px;
+	text-align: center;
+	font-weight: bold;
+    line-height: 22px;
+    display: inline-block;
+    border-right:1px solid #E6E6E6;
+    padding: 0 20px;
+}
+.cases-list li span{
+	list-style-type: none;
+	font-size: 12px;
+	text-align: center;
+	font-weight: 300;
+}
+.lst-font{
+	font-size: 15px !important;
+}
+
+
+
+
+.image-part{
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+.image-part h4{
+	text-align: left;
+	font-size: 22px;
+	letter-spacing: 0;
+	color: #000000;
+	opacity: 1;
+	font-weight: 800;
+	margin-bottom: 25px;
+}
+.image-part p{
+	font-size: 15px;
+}
+.image-part img{
+	width: 100%;
+	background-size: cover;
+	overflow: hidden;
+}
+.btn-with-content{
+display: flex;align-items: center;
+margin-top: 50px;
+}
+.btn-with-content .yellow-btn{
+   float: right;
+}
+.padding-inside{
+	padding: 70px;
+}
+
+
+
+.footer{
+padding: 60px;
+text-align: center;
+background-color: #000;
+color: #fff;
+}
+.footer h4{
+ font-weight:100;
+ line-height: 35px;
+}
+.footer p{
+font-weight:100;
+font-size: 13px;
+letter-spacing: 1px;
+}
+
+
+
+
+
+
+
+.main-part-2{
+	background: url(assets/img/bg-half.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    overflow: hidden;
+    padding: 40px;
+}
+.main-part-2 h2{
+	color: #fff;
+	font-weight: bold;
+	line-height: 48px;
+}
+.bg-form{
+	background-color: #F9F9F9;
+	margin-bottom: 8px;
+	padding: 15px 30px;
+}
+.bg-form h6{
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 22px;
+}
+.form-control {
+    font-size: 14px;
+    border: 1px solid #00000026;
+     border-radius: 0px; 
+     color: #212121;
+}
+.form-control:focus {
+    box-shadow: none;
+}
+.field-title{
+	font-size: 16px;
+	color: #000;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+::placeholder { /* Firefox, Chrome, Opera */ 
+    color: #000 !important; 
+    font-size: 13px;
+} 
+.form-check-label {
+    margin-bottom: 0;
+    font-size: 14px;
+    color: #000;
+}
+.form-check-input {
+    position: absolute;
+    margin-top: 0.4rem;
+    margin-left: -1.25rem;
+}
+.form-part{
+	width: 80%;
+	margin:auto;
+}
+.submit-btn{
+	border-radius: 0;
+	padding:10px 40px;
+	font-size: 14px;
+	color: #000;
+	font-weight: 500;
+	background-color: #F2B91D;
+    border-color: #F2B91D;
+}
+.submit-btn:hover{
+	background-color: #F2B91D;
+    border-color: #F2B91D;
+}
+
